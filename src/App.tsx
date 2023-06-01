@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useMemo, useState } from 'react';
+import { StackComponent } from './Stack';
+import { GlobalStyle } from './styled';
+
+type DataStructureTypes = 'stack'
 
 function App() {
+  const [dataStructure, setDataStructure] = useState<DataStructureTypes>('stack')
+  
+  const component = useMemo(() => {
+    if (!dataStructure) return;
+    console.log('called')
+    switch(dataStructure) {
+      case 'stack':
+        return <StackComponent />
+    }
+  }, [dataStructure])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Choose the Data Structure using the buttons below</h1>
+      <button onClick={() => setDataStructure('stack')}>Stack</button>
+      {component}
+      <GlobalStyle />
+    </>
   );
 }
 
