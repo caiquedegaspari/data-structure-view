@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import img from './assets/programming-bg.webp';
 
 const GlobalStyle = createGlobalStyle`
@@ -17,11 +17,13 @@ const GlobalStyle = createGlobalStyle`
         z-index: -1;
       }
   }
-  h1 {
-    color: #444444;
+  h1, h2, h3, h4, h5, h6 {
+    color: #254757
+;
   }
   button {
-    min-width: 100px;
+    min-width: 150px;
+    height: 45px;
     padding: 10px;
     background: #2986cc;
     color: #fff;
@@ -30,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
     border: none; 
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: 200ms;
+    font-weight: 600;
     :hover {
       background: #337fb8;
       cursor: pointer;
@@ -37,4 +40,9 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export { GlobalStyle };
+const ButtonContainer = styled.div`
+	display: flex;
+	justify-content: space-around;
+`;
+
+export { GlobalStyle, ButtonContainer };
