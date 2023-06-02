@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import img from './assets/programming-bg.webp'
+import { createGlobalStyle } from 'styled-components';
+import img from './assets/programming-bg.webp';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -35,6 +35,6 @@ const GlobalStyle = createGlobalStyle`
       cursor: pointer;
     }
   }
-`
+`;
 
-export { GlobalStyle }
+export { GlobalStyle };
