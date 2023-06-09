@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { ButtonContainer, Container, Stack, StackContainer } from './styled';
+import { StackContainer } from './styled';
+import {
+	ButtonGroupContainer,
+	Container,
+	DefaultItem as Stack,
+} from '../styled';
 
 export function StackComponent() {
 	const [stack, setStack] = useState<string[]>([]);
@@ -36,14 +41,14 @@ export function StackComponent() {
 		<Container>
 			<div>
 				<h1>Actions</h1>
-				<ButtonContainer>
+				<ButtonGroupContainer>
 					<button onClick={() => push('Item')}>Add</button>
-					<button onClick={() => remove()}>Remove</button>
-					<button onClick={() => clear()}>Clear</button>
-					<button onClick={() => size()}>Size</button>
-					<button onClick={() => getFirstItem()}>Get item From Top</button>
-					<button onClick={() => getLastItem()}>Get item bottom</button>
-				</ButtonContainer>
+					<button onClick={remove}>Remove</button>
+					<button onClick={clear}>Clear</button>
+					<button onClick={size}>Size</button>
+					<button onClick={getFirstItem}>Get item From Top</button>
+					<button onClick={getLastItem}>Get item bottom</button>
+				</ButtonGroupContainer>
 			</div>
 			<StackContainer>
 				<h1>Stack</h1>

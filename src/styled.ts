@@ -1,31 +1,18 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import img from './assets/programming-bg.webp';
 
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
-    ::before {
-        content: " ";
-        background-image: url(${img});
-        background-size: cover;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.1;
-        z-index: -1;
-      }
+    background-color: #153243;
   }
   h1, h2, h3, h4, h5, h6 {
-    color: #254757
-;
+    color: #eff0d1;
   }
   button {
     min-width: 150px;
     height: 45px;
     padding: 10px;
-    background: #2986cc;
+    background: #284b63;
     color: #fff;
     border-radius: 5px;
     outline: none;
@@ -45,4 +32,36 @@ const ButtonContainer = styled.div`
 	justify-content: space-around;
 `;
 
-export { GlobalStyle, ButtonContainer };
+const Container = styled.div`
+	display: flex;
+	justify-content: space-around;
+`;
+
+const ButtonGroupContainer = styled.div`
+	display: grid;
+	grid-template-columns: 200px 200px;
+	gap: 20;
+	grid-row-gap: 10px;
+	grid-column-gap: 10px;
+	position: relative;
+	height: 150px;
+`;
+
+const DefaultItem = styled.div`
+	margin: 3px;
+	text-align: center;
+	background: #2a9d8f;
+	color: #fff;
+	border-radius: 5px;
+	position: static;
+	height: 50px;
+	min-width: 75px;
+`;
+
+export {
+	GlobalStyle,
+	ButtonContainer,
+	Container,
+	ButtonGroupContainer,
+	DefaultItem,
+};
